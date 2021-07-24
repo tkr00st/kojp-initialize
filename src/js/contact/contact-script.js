@@ -53,6 +53,7 @@ export default function () {
   function copy_1(_text) {
     var area = document.createElement('textarea');
     area.textContent = _text;
+    area.readOnly = true;
     document.body.appendChild(area);
     area.select();
     document.execCommand('copy');
