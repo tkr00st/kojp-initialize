@@ -228,6 +228,13 @@ h3 {
 }
 
 
+@media screen and (max-width:599px) {
+  /*　画面サイズが599pxまではここを読み込む　*/
+  .main-content-wrapper {
+    padding-top: 18px;
+  }
+}
+
 @media screen and (min-width:600px) {
 
   /*　画面サイズが600pxからはここを読み込む　*/
