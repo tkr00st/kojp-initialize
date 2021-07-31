@@ -49,7 +49,32 @@ const work = {
         });
       });
     }
-  }
+  },
+  BlockOpenWighHash: class {
+    constructor(_element) {
+      this.element = _element;
+      this.wrapper = _element.parentNode;
+      this.slideTarget = this.wrapper.dataset.slideContent;
+      this.toggleBotton = document.querySelector(`[data-slide-target="${this.slideTarget}"]`);
+    }
+
+    // setToggleBotton() {
+    //   return
+    // }
+
+    blockOpen(_hash) {
+      if (this.element.id === _hash.replace('#', '')) {
+        const clickEvent = new Event('click');
+        const mediaQuery = window.matchMedia('(max-width: 599px)');
+        const targetAdjustTop = (mediaQuery.matches) ? 40 : 80;
+        this.toggleBotton.dispatchEvent(clickEvent);
+        window.scrollTo({
+          top: this.wrapper.offsetTop - targetAdjustTop,
+          behavior: 'auto'
+        });
+      }
+    }
+  },
 };
 
 const init = () => {
@@ -71,6 +96,12 @@ const init = () => {
       'click',
       toggleElement.clicked.bind(toggleElement)
     );
+  });
+
+  const hiddenHeadingElement = document.querySelectorAll('.hidden-heading');
+  hiddenHeadingElement.forEach((_element) => {
+    const hiddenHeading = new work.BlockOpenWighHash(_element);
+    hiddenHeading.blockOpen(window.location.hash);
   });
 };
 
