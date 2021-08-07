@@ -455,7 +455,7 @@
 }
 
 @media screen and (min-width:600px) and (max-width:1024px) {
-  /*　画面サイズが601psから1024pxからはここを読み込む　*/
+  /*　画面サイズが601pxから1024pxはここを読み込む　*/
 }
 
 @media screen and (min-width:1024px) {
@@ -473,5 +473,13 @@
     width: 624px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  /*　画面サイズが601pxからはここを読み込む　*/
+  .logo-explanation__text {
+    margin-top: 0px;
   }
 }
