@@ -97,7 +97,7 @@ const work = {
     autoPlay() {
       this.timer = setInterval(() => {
         this.turnBack();
-      }, 1500);
+      }, 2000);
     }
   },
 };

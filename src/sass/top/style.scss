@@ -57,6 +57,7 @@
     &-item {
       position: absolute;
       opacity: 0;
+      transition: opacity 1s;
       &:first-of-type {
         opacity: 1;
       }
