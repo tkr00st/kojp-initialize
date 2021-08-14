@@ -75,6 +75,15 @@ const work = {
       }
     }
   },
+  StatementTicker: class {
+    constructor(_element) {
+      this.element = _element;
+      this.ticker = this.element.querySelector('.top-statement__ticker');
+      this.items = [...this.element.querySelectorAll('.top-statement__ticker-item')];
+      this.firstItem = this.items[0];
+      this.lastItem = this.items[this.items.length - 1];
+    }
+  },
 };
 
 const init = () => {
@@ -103,6 +112,10 @@ const init = () => {
     const hiddenHeading = new work.BlockOpenWighHash(_element);
     hiddenHeading.blockOpen(window.location.hash);
   });
+
+  const statementTickerElement = document.querySelector('.top-statement__ticker');
+  const statementTicker = new work.StatementTicker(statementTickerElement);
+
 };
 
 window.addEventListener('load', init);
