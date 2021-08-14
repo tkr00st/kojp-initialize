@@ -87,6 +87,7 @@ const work = {
     upDate() {
       this.items = [...this.element.querySelectorAll('.top-statement__ticker-item')];
       this.firstItem = this.items[0];
+      this.firstItem.classList.add('second--time');
     }
 
     turnBack() {
@@ -95,9 +96,10 @@ const work = {
     }
 
     autoPlay() {
+      this.firstItem.classList.add('second--time');
       this.timer = setInterval(() => {
         this.turnBack();
-      }, 2000);
+      }, 4000);
     }
   },
 };

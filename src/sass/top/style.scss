@@ -45,6 +45,28 @@
     }
   }
 
+  @keyframes fadeIn {
+    0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1
+    }
+    100% {
+      opacity: 0
+    }
+  }
+  @keyframes noOpacity {
+    100% {
+      opacity: 0
+    }
+  }
+
   &__ticker {
     font-size: 2.8rem;
     line-height: 1.6;
@@ -56,10 +78,13 @@
     }
     &-item {
       position: absolute;
-      opacity: 0;
-      transition: opacity 1s;
+      animation: 1.5s forwards fadeOut;
+      &:not(.second--time) {
+        opacity: 0;
+        animation: 0 noOpacity;
+      }
       &:first-of-type {
-        opacity: 1;
+        animation: 1s forwards fadeIn;
       }
     }
   }
