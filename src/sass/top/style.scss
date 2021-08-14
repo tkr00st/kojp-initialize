@@ -19,9 +19,10 @@
   @extend %knicka-mincho-with-ten-mincho;
   color: #707070;
   background-color: rgba(255, 255, 255, .9);
-  max-width: 320px;
-  padding: 4px;
+  max-width: 340px;
+  padding: 4px 4px 0 4px;
   box-sizing: border-box;
+  white-space: nowrap;
 
   &__title {
     font-size: 2.8rem;

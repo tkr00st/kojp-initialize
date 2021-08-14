@@ -78,10 +78,26 @@ const work = {
   StatementTicker: class {
     constructor(_element) {
       this.element = _element;
-      this.ticker = this.element.querySelector('.top-statement__ticker');
       this.items = [...this.element.querySelectorAll('.top-statement__ticker-item')];
       this.firstItem = this.items[0];
       this.lastItem = this.items[this.items.length - 1];
+      this.timer;
+    }
+
+    upDate() {
+      this.items = [...this.element.querySelectorAll('.top-statement__ticker-item')];
+      this.firstItem = this.items[0];
+    }
+
+    turnBack() {
+      this.element.appendChild(this.firstItem);
+      this.upDate();
+    }
+
+    autoPlay() {
+      this.timer = setInterval(() => {
+        this.turnBack();
+      }, 1500);
     }
   },
 };
@@ -115,7 +131,7 @@ const init = () => {
 
   const statementTickerElement = document.querySelector('.top-statement__ticker');
   const statementTicker = new work.StatementTicker(statementTickerElement);
-
+  statementTicker.autoPlay();
 };
 
 window.addEventListener('load', init);
