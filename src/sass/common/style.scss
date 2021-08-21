@@ -682,14 +682,49 @@ input[type="checkbox"].common-display-toggle-check {
   }
 
   .global-header {
-    width: 100vw;
+    @keyframes header-fadeIn {
+      0% {
+        opacity: 0
+      }
 
+      100% {
+        opacity: 1
+      }
+    }
+
+    @keyframes header-fadeIn-scrolled {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    @keyframes header-fadeOut {
+      0% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 0
+      }
+    }
+
+    width: 100vw;
+    &[threshold="threshold"] {
+      animation: 2s forwards header-fadeIn;
+    }
     &[scrolled="scrolled"] {
       position: fixed;
       top: 0;
       z-index: 1000;
       background-color: #fff;
       margin-top: -5px;
+      &[threshold="threshold"] {
+        animation: 1s forwards header-fadeIn-scrolled;
+      }
     &+* {
         &:before {
           content: '';

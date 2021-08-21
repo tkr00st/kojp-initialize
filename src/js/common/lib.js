@@ -38,13 +38,16 @@ const utility = {
 
 const commonWork = {
   toggleGlobalHeaderWithScroll: (_globalHeader) => {
-    let scrollFlag = false;
+    let scrolledFlag = false;
+    let thresholdFlag = false;
+    let scrollNum = window.scrollY;
     const threshold = _globalHeader.clientHeight;
+    const scrolledName = 'scrolled';
+    const thresholdName = 'threshold';
     const toggleScrolledAttr = () => {
-      if (!scrollFlag) {
+      if (!scrolledFlag) {
         window.requestAnimationFrame(() => {
-          scrollFlag = false;
-          const scrolledName = 'scrolled';
+          scrolledFlag = false;
           if (window.scrollY > threshold) {
             _globalHeader.setAttribute(scrolledName, scrolledName);
           } else {
@@ -53,7 +56,21 @@ const commonWork = {
             }
           }
         });
-        scrollFlag = true;
+        scrolledFlag = true;
+      }
+      if (!thresholdFlag) {
+        if (scrollNum < threshold) {
+          if (window.scrollY > threshold) {
+            _globalHeader.setAttribute(thresholdName, thresholdName);
+            thresholdFlag = true;
+          }
+        }
+        else if (scrollNum > threshold) {
+          if (window.scrollY < threshold) {
+            _globalHeader.setAttribute(thresholdName, thresholdName);
+            thresholdFlag = true;
+          }
+        }
       }
     };
     window.addEventListener('scroll', toggleScrolledAttr, {

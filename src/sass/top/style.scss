@@ -45,7 +45,7 @@
     }
   }
 
-  @keyframes fadeIn {
+  @keyframes ticker-fadeIn {
     0% {
       opacity: 0
     }
@@ -53,7 +53,7 @@
       opacity: 1
     }
   }
-  @keyframes fadeOut {
+  @keyframes ticker-fadeOut {
     0% {
       opacity: 1
     }
@@ -61,7 +61,7 @@
       opacity: 0
     }
   }
-  @keyframes noOpacity {
+  @keyframes ticker-noOpacity {
     100% {
       opacity: 0
     }
@@ -78,13 +78,13 @@
     }
     &-item {
       position: absolute;
-      animation: 1.5s forwards fadeOut;
+      animation: 1.5s forwards ticker-fadeOut;
       &:not(.second--time) {
         opacity: 0;
-        animation: 0 noOpacity;
+        animation: 0 ticker-noOpacity;
       }
       &:first-of-type {
-        animation: 1s forwards fadeIn;
+        animation: 1s forwards ticker-fadeIn;
       }
     }
   }
