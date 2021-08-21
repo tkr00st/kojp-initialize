@@ -78,13 +78,13 @@
     }
     &-item {
       position: absolute;
-      animation: 1.5s forwards ticker-fadeOut;
+      animation: 0.05s forwards ticker-fadeOut;
       &:not(.second--time) {
         opacity: 0;
         animation: 0 ticker-noOpacity;
       }
       &:first-of-type {
-        animation: 1s forwards ticker-fadeIn;
+        animation: 0.8s forwards ticker-fadeIn;
       }
     }
   }

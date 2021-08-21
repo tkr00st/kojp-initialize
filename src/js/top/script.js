@@ -99,7 +99,7 @@ const work = {
       this.firstItem.classList.add('second--time');
       this.timer = setInterval(() => {
         this.turnBack();
-      }, 4000);
+      }, 3000);
     }
   },
 };
