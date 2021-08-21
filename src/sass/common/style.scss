@@ -713,9 +713,6 @@ input[type="checkbox"].common-display-toggle-check {
     }
 
     width: 100vw;
-    &[threshold="threshold"] {
-      animation: 2s forwards header-fadeIn;
-    }
     &[scrolled="scrolled"] {
       position: fixed;
       top: 0;
@@ -723,7 +720,7 @@ input[type="checkbox"].common-display-toggle-check {
       background-color: #fff;
       margin-top: -5px;
       &[threshold="threshold"] {
-        animation: 1s forwards header-fadeIn-scrolled;
+        animation: 0.2s forwards header-fadeIn-scrolled;
       }
     &+* {
         &:before {
