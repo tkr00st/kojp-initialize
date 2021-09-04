@@ -195,14 +195,16 @@
   }
 
   &__button-2nd {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 16px;
     color: #2B2B2B;
     border: solid 1px #2B2B2B;
     background-color: #FFF;
     border-radius: 98px;
-    width: 288px;
-    height: 48px;
+    min-width: 240px;
+    min-height: 48px;
     margin-left: auto;
     margin-right: auto;
     font-family: "yu-mincho-pr6n", serif;
