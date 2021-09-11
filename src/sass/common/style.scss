@@ -1041,7 +1041,8 @@ body{
 
 .global-footer {
   &__wrap {
-    width: 420px;
+    max-width: 420px;
+    width: auto;
   }
   &__link {
     margin-bottom: 0px;
