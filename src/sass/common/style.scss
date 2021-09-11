@@ -1039,48 +1039,123 @@ body{
   }
 }
 
-@media screen and (max-width:747px) {
-  /*　画面サイズが747pxからはここを読み込む　*/
-  .global-footer {
-      &__wrap {
-        width: 308px;
-      }
-      &__link {
-        margin-bottom: 0px;
-      }
-    }
-
-  #container {
-    display: grid; /* グリッドレイアウト */
-    grid-template-rows: 52px 52px;
-    grid-template-columns: 108px 108px 92px;
-    text-align: left;
+.global-footer {
+  &__wrap {
+    width: 420px;
   }
-  #itemA {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-    padding-left: 40px;
+  &__link {
+    margin-bottom: 0px;
+  }
+}
+
+#container {
+display: grid; /* グリッドレイアウト */
+grid-template-rows: 52px 52px;
+grid-template-columns: 108px 108px 92px;
+text-align: left;
+}
+#itemA {
+grid-row: 1 / 2;
+grid-column: 1 / 2;
+padding-left: 40px;
+}
+#itemB {
+grid-row: 1 / 2;
+grid-column: 2 / 3;
+}
+#itemC {
+grid-row: 1 / 2;
+grid-column: 3 / 4;
+}
+#itemD {
+grid-row: 2 / 3;
+grid-column: 1 / 2;
+padding-left: 40px;
+}
+#itemE {
+grid-row: 2 / 3;
+grid-column: 2 / 3;
+}
+#itemF {
+grid-row: 2 / 3;
+grid-column: 3 / 4;
+}
+#itemG {
+grid-row: 3 / 4;
+grid-column: 1 / 2;
+padding-left: 40px;
+}
+#itemH {
+grid-row: 3 / 4;
+grid-column: 2 / 3;
+}
+#itemI {
+grid-row: 3 / 4;
+grid-column: 3 / 4;
+}
+
+@media screen and (max-width:747px) {
+  /*　画面サイズが747pxまではここを読み込む　*/
+
+
+}
+
+@media screen and (min-width:748px) {
+  /*　画面サイズが748pxからはここを読み込む　*/
+
+  .global-footer {
+    &__wrap {
+      width: 704px;
+    }
+    &__link {
+      margin-bottom: 0px;
+    }
+  }
+
+#container {
+  display: grid; /* グリッドレイアウト */
+  grid-template-rows: 52px 52px;
+  grid-template-columns: 128px 128px 128px 128px 92px;
+  text-align: left;
+}
+#itemA {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  padding-left: 0px;
   }
   #itemB {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
   }
   #itemC {
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
   }
   #itemD {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-    padding-left: 40px;
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+  padding-left: 0px;
   }
   #itemE {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  grid-column: 5 / 6;
   }
   #itemF {
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
   }
-
+  #itemG {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  padding-left: 0px;
+  }
+  #itemH {
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+  }
+  #itemI {
+  grid-row: 2 / 3;
+  grid-column: 4 / 5;
+  
+}
 }
