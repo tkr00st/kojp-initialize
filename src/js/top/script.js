@@ -56,23 +56,31 @@ const work = {
       this.wrapper = _element.parentNode;
       this.slideTarget = this.wrapper.dataset.slideContent;
       this.toggleBotton = document.querySelector(`[data-slide-target="${this.slideTarget}"]`);
+      this.inAnchorLinks = document.querySelectorAll(`[href="#${_element.id}"]`);
     }
-
-    // setToggleBotton() {
-    //   return
-    // }
 
     blockOpen(_hash) {
       if (this.element.id === _hash.replace('#', '')) {
-        const clickEvent = new Event('click');
+        if (this.toggleBotton.getAttribute('clicked') !== 'clicked') {
+          const clickEvent = new Event('click');
+          this.toggleBotton.dispatchEvent(clickEvent);
+        }
         const mediaQuery = window.matchMedia('(max-width: 599px)');
         const targetAdjustTop = (mediaQuery.matches) ? 40 : 80;
-        this.toggleBotton.dispatchEvent(clickEvent);
         window.scrollTo({
           top: this.wrapper.offsetTop - targetAdjustTop,
           behavior: 'auto'
         });
       }
+    }
+
+    blockOpenWithAnchorLink() {
+      this.inAnchorLinks.forEach((_element) => {
+        _element.addEventListener('click', (_e) => {
+          this.blockOpen(this.element.id);
+          _e.preventDefault();
+        });
+      });
     }
   },
   StatementTicker: class {
@@ -129,6 +137,7 @@ const init = () => {
   hiddenHeadingElement.forEach((_element) => {
     const hiddenHeading = new work.BlockOpenWighHash(_element);
     hiddenHeading.blockOpen(window.location.hash);
+    hiddenHeading.blockOpenWithAnchorLink();
   });
 
   const statementTickerElement = document.querySelector('.top-statement__ticker');
