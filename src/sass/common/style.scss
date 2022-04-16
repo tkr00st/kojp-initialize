@@ -42,6 +42,11 @@ body {
   @extend %yu-mincho-pr6n;
 }
 
+a {
+text-decoration: none;
+color: #2b2b2b;
+}
+
 p {
   margin: 0;
 }
@@ -582,6 +587,30 @@ input[type="checkbox"].common-display-toggle-check {
   font-size: 1.4rem;
   text-align: right;
   margin-top: 16px;
+}
+
+.common-content-more {
+    font-size: 1.4rem;
+    margin-top: 4px;
+    padding-right: 8px;
+    display: block;
+    text-align: right;
+    position: relative;
+    text-decoration: none;
+    color: #2b2b2b;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc(50% - 3px);
+      right: 0;
+      width: 4px;
+      height: 4px;
+      border-top: 1px solid #2b2b2b;
+      border-right: 1px solid #2b2b2b;
+      transform: rotate(45deg);
+    }
 }
 
 .client-list {
