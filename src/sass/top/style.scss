@@ -368,7 +368,7 @@
   width: 100%;
 }  
 
-.lab-list-item > h3::after {
+.lab-list-item > h3.link-icon::after {
   content: "";
   display: inline-block;
   height: 16px;
