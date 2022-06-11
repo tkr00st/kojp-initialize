@@ -133,6 +133,9 @@ Object.assign(
       './src/js/faq/script.js',
       './src/sass/faq/style.scss',
     ],
+    knickamincho: [
+      './src/sass/knickamincho/style.scss',
+    ],
   },
 );
 
