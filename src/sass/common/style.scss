@@ -1102,7 +1102,7 @@ text-align: left;
 #itemA {
 grid-row: 1 / 2;
 grid-column: 1 / 2;
-padding-left: 27px;
+padding-left: 24px;
 }
 #itemB {
 grid-row: 1 / 2;
@@ -1115,7 +1115,7 @@ grid-column: 3 / 4;
 #itemD {
 grid-row: 2 / 3;
 grid-column: 1 / 2;
-padding-left: 27px;
+padding-left: 24px;
 }
 #itemE {
 grid-row: 2 / 3;
@@ -1128,7 +1128,7 @@ grid-column: 3 / 4;
 #itemG {
 grid-row: 3 / 4;
 grid-column: 1 / 2;
-padding-left: 27px;
+padding-left: 24px;
 }
 #itemH {
 grid-row: 3 / 4;
@@ -1138,6 +1138,12 @@ grid-column: 2 / 3;
 grid-row: 3 / 4;
 grid-column: 3 / 4;
 }
+#itemI {
+  grid-row: 4 / 5;
+  grid-column: 1 / 2;
+  padding-left: 24px;
+  }
+  
 
 @media screen and (max-width:747px) {
   /*　画面サイズが747pxまではここを読み込む　*/
@@ -1202,6 +1208,13 @@ grid-column: 3 / 4;
   #itemI {
   grid-row: 2 / 3;
   grid-column: 4 / 5;
+  padding-left: 0px;
   
 }
+#itemJ {
+  grid-row: 2 / 3;
+  grid-column: 5 / 6;
+  
+}
+
 }
