@@ -136,6 +136,9 @@ Object.assign(
     knickamincho: [
       './src/sass/knickamincho/style.scss',
     ],
+    vr: [
+      './src/sass/vr/style.scss',
+    ],
   },
 );
 
