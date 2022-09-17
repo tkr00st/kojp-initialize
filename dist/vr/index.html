@@ -96,14 +96,12 @@
           <ul>
             <li>
               <dl>
-                <dt class="">ハンドトラッキングを試してみる</dt>
-                <dd class="">VRやARと一緒に使われそうなハンドトラッキング。ほとんどのPCやスマホにはカメラも付いてるから、まずはこういうところから広がりそう。
-                </dd>
+                <dt class="common-heading2 top-heading2">まず、ハンドトラッキングを試してみる。</dt>
+                <dd class="question__anser-details">VRやARと一緒に使われそうなハンドトラッキング。ほとんどのPCやスマホにはカメラも付いてるから、まずはこういうところから広がりそう。<a href="https://google.github.io/mediapipe/" rel="noopener" target="_blank">Googleのmediapipe</a>を利用して実験中。startボタンを押すとカメラが起動します。</dd>
               </dl>
             </li>
           </ul>
         </div>
-
       <div class="pipe-container">
         <div class="ui-block">
           <div>
@@ -112,7 +110,7 @@
             <button id="PIPE_SWITCH">switch</button>
           </div>
         </div>
-        <div class="camera-block">
+        <div id="CAMERA_BLOCK" class="camera-block">
           <video id="IN_CAMERA" class="in-camera" autoplay playsinline="true"></video>
           <canvas id="OUT_OUTPUT" class="out-output" width="400" height="400"></canvas>
         </div>
@@ -134,6 +132,7 @@
     </script>
     <script>
       (function () {
+        const cameraBlock = document.getElementById('CAMERA_BLOCK');
         const inCameraVideo = document.getElementById('IN_CAMERA');
         const outputCanvas = document.getElementById('OUT_OUTPUT');
         const ctx = outputCanvas.getContext('2d');
@@ -141,7 +140,7 @@
           environment: 'environment',
           user: 'user'
         };
-        let defaultCameraEnv = cameraEnv.environment;
+        let defaultCameraEnv = cameraEnv.user;
 
         const config = {
           locateFile: file => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
@@ -179,7 +178,10 @@
         });
 
         document.getElementById('PIPE_START')
-          .addEventListener('click', () => nowCamera.start());
+          .addEventListener('click', () => {
+            cameraBlock.style.height = '400px';
+            nowCamera.start();
+          });
 
         document.getElementById('PIPE_STOP')
           .addEventListener('click', () => nowCamera.stop());
@@ -220,7 +222,6 @@
       .camera-block {
         position: relative;
         width: 400px;
-        height: 400px;
         margin: 0 auto;
       }
 
